@@ -9,13 +9,13 @@ import java.util.Random;
 // 만약 존재하지 않는 숫자라면 담는다.
 
 public class NumberGenerator {
-    public List<Integer> createRandomNumbers(){
+    public List<Integer> createRandomNumbers() {
         List<Integer> numbers = new ArrayList<>();
-        while(numbers.size() < 3){
+        while (numbers.size() < 3) {
             int number = new Random().nextInt(9) + 1;
-            if (numbers.contains(number)){
+            if (numbers.contains(number)) {
                 continue;
-            }else{
+            } else {
                 numbers.add(number);
             }
         }
