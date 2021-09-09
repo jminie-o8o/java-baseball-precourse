@@ -12,11 +12,8 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
-//        NumberGenerator numberGenerator = new NumberGenerator();
-//        System.out.println(numberGenerator.createRandomNumbers());
-
-        Judgement judgement = new Judgement();
-        int count = judgement.correctCount(Arrays.asList(1, 2, 3), Arrays.asList(1, 2, 5));
-        System.out.println(count);
+        Referee referee = new Referee();
+        String result = referee.compare(Arrays.asList(3, 1, 2), Arrays.asList(1, 2, 3));
+        System.out.println(result);
     }
 }
