@@ -13,28 +13,42 @@ import java.util.Scanner;
  */
 
 public class Application {
-    public static void main(String[] args){
-        NumberGenerator numberGenerator = new NumberGenerator();
-        List<Integer> computerNumber = numberGenerator.createRandomNumbers();
+    public static void main(String[] args) {
+        boolean answer = true;
+        while (answer) {
+            NumberGenerator numberGenerator = new NumberGenerator();
+            List<Integer> computerNumber = numberGenerator.createRandomNumbers();
 
-        Referee referee = new Referee();
-
-        String result = "";
-        while(!result.equals("0볼 3스트라이크")){
-            result = referee.compare(computerNumber, askNumber());
-            System.out.println(result);
+            Referee referee = new Referee();
+            String result = "";
+            while (!result.equals("0볼 3스트라이크")) {
+                result = referee.compare(computerNumber, askNumber());
+                System.out.println(result);
+            }
+            answer = tryAgain();
         }
     }
 
-    public static List<Integer> askNumber(){
+    public static List<Integer> askNumber() {
         System.out.println("숫자를 입력해주세요 : ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
 
         List<Integer> numbers = new ArrayList<>();
-        for(String number : input.split("")){
+        for (String number : input.split("")) {
             numbers.add(Integer.parseInt(number));
         }
         return numbers;
+    }
+
+    public static boolean tryAgain() {
+        System.out.println("정답을 모두 맞추셨습니다! 게임을 다시 시작하시겠습니까? 다시 시작 1, 종료 2");
+        Scanner scanner = new Scanner(System.in);
+        char answer = scanner.next().charAt(0);
+        if (answer == '1') {
+            return true;
+        }
+        System.out.println("수고하셨습니다!");
+        return false;
     }
 }
