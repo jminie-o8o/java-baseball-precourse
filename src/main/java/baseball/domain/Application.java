@@ -1,7 +1,9 @@
 package baseball.domain;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * 객체 지향 프로그래밍
@@ -11,9 +13,28 @@ import java.util.List;
  */
 
 public class Application {
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        NumberGenerator numberGenerator = new NumberGenerator();
+        List<Integer> computerNumber = numberGenerator.createRandomNumbers();
+
         Referee referee = new Referee();
-        String result = referee.compare(Arrays.asList(3, 1, 2), Arrays.asList(1, 2, 3));
-        System.out.println(result);
+
+        String result = "";
+        while(!result.equals("0볼 3스트라이크")){
+            result = referee.compare(computerNumber, askNumber());
+            System.out.println(result);
+        }
+    }
+
+    public static List<Integer> askNumber(){
+        System.out.println("숫자를 입력해주세요 : ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+
+        List<Integer> numbers = new ArrayList<>();
+        for(String number : input.split("")){
+            numbers.add(Integer.parseInt(number));
+        }
+        return numbers;
     }
 }
