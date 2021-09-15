@@ -34,6 +34,7 @@ public class Application {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
 
+
         List<Integer> numbers = new ArrayList<>();
         for (String number : input.split("")) {
             numbers.add(Integer.parseInt(number));
