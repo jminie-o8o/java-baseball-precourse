@@ -11,7 +11,7 @@ public class Input {
         List<Integer> playerNum = new ArrayList<>();
         String input = scanner.next();
 
-        for(String number: input.split(" ")){
+        for(String number: input.split("")){
             playerNum.add(Integer.parseInt(number));
         }
         return playerNum;

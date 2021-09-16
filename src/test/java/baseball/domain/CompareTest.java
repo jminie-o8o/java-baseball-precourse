@@ -25,6 +25,6 @@ class CompareTest {
     @Test
     @DisplayName("스트라이크 수 확인")
     void strike(){
-        assertThat(0).isEqualTo(compare.countStrike(Arrays.asList(1,2,3),Arrays.asList(3,1,2)));
+        assertThat(1).isEqualTo(compare.countStrike(Arrays.asList(3,2,4),Arrays.asList(3,1,2)));
     }
 }
