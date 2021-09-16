@@ -19,12 +19,12 @@ class CompareTest {
     @Test
     @DisplayName("몇개의 숫자가 같은지 확인")
     void count(){
-        assertThat(3).isEqualTo(compare.howMany(Arrays.asList(1,2,3), Arrays.asList(1,2,3)));
+        assertThat(3).isEqualTo(compare.howMany(Arrays.asList(1,2,3), Arrays.asList(3,1,2)));
     }
 
     @Test
     @DisplayName("스트라이크 수 확인")
     void strike(){
-        assertThat(2).isEqualTo(compare.countStrike(Arrays.asList(1,2,3),Arrays.asList(1,2,4)));
+        assertThat(0).isEqualTo(compare.countStrike(Arrays.asList(1,2,3),Arrays.asList(3,1,2)));
     }
 }
