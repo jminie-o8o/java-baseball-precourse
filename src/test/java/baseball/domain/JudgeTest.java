@@ -22,13 +22,13 @@ class JudgeTest {
     @Test
     @DisplayName("3볼 확인")
     void ballcheak(){
-        assertThat("3볼 0스트라이크").isEqualTo(judge.judgement(Arrays.asList(3,1,2),Arrays.asList(1,2,3)));
+        assertThat("3볼").isEqualTo(judge.judgement(Arrays.asList(3,1,2),Arrays.asList(1,2,3)));
     }
 
     @Test
     @DisplayName("3스트라이크 확인")
     void strikecheck(){
-        assertThat("0볼 3스트라이크").isEqualTo(judge.judgement(Arrays.asList(1,2,3),Arrays.asList(1,2,3)));
+        assertThat("3스트라이크").isEqualTo(judge.judgement(Arrays.asList(1,2,3),Arrays.asList(1,2,3)));
     }
 
 
